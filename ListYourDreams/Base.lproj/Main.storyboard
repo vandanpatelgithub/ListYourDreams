@@ -166,6 +166,9 @@
                                     <constraint firstAttribute="width" constant="100" id="WEH-vb-maI"/>
                                     <constraint firstAttribute="height" constant="100" id="zg0-MX-3Zr"/>
                                 </constraints>
+                                <connections>
+                                    <action selector="addImage:" destination="LIb-DO-8gI" eventType="touchUpInside" id="nqd-1g-4l4"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Title" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XJj-hC-f6b">
                                 <rect key="frame" x="128" y="84" width="266" height="40"/>
@@ -258,6 +261,7 @@
                         <outlet property="costTextField" destination="EhG-vK-k70" id="t8p-n5-QVa"/>
                         <outlet property="detailsField" destination="Mbi-3M-XYJ" id="Nm0-7R-3nr"/>
                         <outlet property="storePicker" destination="63G-7w-nr0" id="qoV-aL-Zaz"/>
+                        <outlet property="thumbImage" destination="b3n-Sh-pfl" id="xcI-lT-olV"/>
                         <outlet property="titleTextField" destination="XJj-hC-f6b" id="461-CZ-1gI"/>
                     </connections>
                 </viewController>
