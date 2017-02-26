@@ -32,6 +32,9 @@
                                     <segment title="Price"/>
                                     <segment title="Title"/>
                                 </segments>
+                                <connections>
+                                    <action selector="segmentChange:" destination="BYZ-38-t0r" eventType="valueChanged" id="DJf-bR-XM8"/>
+                                </connections>
                             </segmentedControl>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="150" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="SyP-Oz-Dmp">
                                 <rect key="frame" x="20" y="120" width="374" height="616"/>

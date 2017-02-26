@@ -76,7 +76,21 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource, NSFe
         
         let fetchRequest: NSFetchRequest<Item> = Item.fetchRequest()
         let dateSort = NSSortDescriptor(key: "createdAt", ascending: false)
-        fetchRequest.sortDescriptors = [dateSort]
+        let costSort = NSSortDescriptor(key: "cost", ascending: true)
+        let titleSort = NSSortDescriptor(key: "title", ascending: true, selector: #selector(NSString.caseInsensitiveCompare(_:)))
+        
+        let segmentIndex = segment.selectedSegmentIndex
+        switch segmentIndex {
+        case 1:
+            fetchRequest.sortDescriptors = [costSort]
+            break
+        case 2:
+            fetchRequest.sortDescriptors = [titleSort]
+            break
+        default:
+            fetchRequest.sortDescriptors = [dateSort]
+            break
+        }
         
         let fetchedResultsController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: context, sectionNameKeyPath: nil, cacheName: nil)
         fetchedResultsController.delegate = self
@@ -88,6 +102,12 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource, NSFe
             print(error.localizedDescription)
         }
     }
+    
+    @IBAction func segmentChange(_ sender: UISegmentedControl) {
+        attemptFetch()
+        tableView.reloadData()
+    }
+    
     
     func controllerWillChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
         tableView.beginUpdates()
